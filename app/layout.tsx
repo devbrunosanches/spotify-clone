@@ -1,8 +1,9 @@
 import './globals.css'
 import { Cabin } from 'next/font/google'
 
-import { Sidebar } from '@/components'
 import { ModalProvider, SupabaseProvider, ToasterProvider, UserProvider } from '@/providers'
+import { getSongsByUserId } from '@/actions'
+import { Sidebar } from '@/components'
 
 const font = Cabin({ subsets: ['latin'] })
 
@@ -11,11 +12,16 @@ export const metadata = {
   description: 'What about music !?',
 }
 
-export default function RootLayout({
+export const revalidate = 0;
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const userSongs = await getSongsByUserId();
+
   return (
     <html lang="en">
       <body className={font.className}>
@@ -23,7 +29,7 @@ export default function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>
+            <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
           </UserProvider>

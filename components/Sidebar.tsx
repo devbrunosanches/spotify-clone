@@ -7,11 +7,12 @@ import { twMerge } from "tailwind-merge";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
-import { Box, SidebarItem } from "@/components";
+import { Song } from "@/types";
+import { Box, SidebarItem, Library } from "@/components";
 
 interface SidebarProps {
     children: React.ReactNode;
-    songs?: string;
+    songs: Song[];
 }
 
 const Sidebar = ({ children, songs }: SidebarProps) => {
@@ -49,7 +50,7 @@ const Sidebar = ({ children, songs }: SidebarProps) => {
                     </div>
                 </Box>
                 <Box className="overflow-y-auto h-full">
-                    <p>Songs</p>
+                    <Library songs={songs}/>
                 </Box>
             </div>
             <main className="h-full flex-1 overflow-y-auto py-2">

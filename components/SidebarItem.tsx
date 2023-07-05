@@ -21,7 +21,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             className={twMerge(`flex flex-row h-auto items-center 
                 w-full gap-x-4 text-md font-medium cursor-pointer 
                 hover:text-white transition text-blue-600 
-                py-1`,
+                hover:scale-105 py-1`,
                 // active && "text-white"
             )
             }

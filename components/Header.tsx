@@ -47,20 +47,20 @@ const Header: React.FC<HeaderProps> = ({
 
     return (
         <div className={twMerge(`h-fit bg-gradient-to-b 
-            from-orange-600 p-6`,
+            from-red-900 p-6`,
             className
         )}>
             <div className="flex items-center justify-between w-full mb-4">
                 <div className="hidden md:flex gap-x-2 items-center">
                     <button className="flex items-center justify-center 
-                            rounded-full bg-black hover:opacity-75 
+                            rounded-full bg-black hover:scale-110 
                             transition"
                         onClick={() => router.back()}
                     >
                         <RxCaretLeft className="text-white" size={35} />
                     </button>
                     <button className="flex items-center justify-center 
-                            rounded-full bg-black hover:opacity-75 
+                            rounded-full bg-black hover:scale-110 
                             transition"
                         onClick={() => router.forward()}
                     >
@@ -69,14 +69,14 @@ const Header: React.FC<HeaderProps> = ({
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
                     <button className="flex items-center justify-center
-                            rounded-full p-2 bg-white hover:opacity-90 
+                            rounded-full p-2 bg-white hover:scale-110 
                             transition"
                         onClick={() => { }}
                     >
                         <HiHome className="text-black" size={20} />
                     </button>
                     <button className="flex items-center justify-center
-                            rounded-full p-2 bg-white hover:opacity-90 
+                            rounded-full p-2 bg-white hover:scale-110 
                             transition"
                         onClick={() => { }}
                     >
@@ -103,8 +103,8 @@ const Header: React.FC<HeaderProps> = ({
                         <>
                             <div>
                                 <Button
-                                    className="bg-transparent 
-                                        text-blue-300 font-medium"
+                                    className="bg-white px-6 py-2 
+                                        text-black font-medium"
                                     onClick={authModal.onOpen}
                                 >
                                     Sign up
@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({
                             </div>
                             <div>
                                 <Button
-                                    className="bg-white px-6 py-2"
+                                    className="bg-white px-6 py-2 font-medium"
                                     onClick={authModal.onOpen}
                                 >
                                     Log in
