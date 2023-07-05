@@ -2,7 +2,7 @@ import './globals.css'
 import { Cabin } from 'next/font/google'
 
 import { Sidebar } from '@/components'
-import { SupabaseProvider, UserProvider } from '@/providers'
+import { ModalProvider, SupabaseProvider, ToasterProvider, UserProvider } from '@/providers'
 
 const font = Cabin({ subsets: ['latin'] })
 
@@ -19,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
+            <ModalProvider />
             <Sidebar>
               {children}
             </Sidebar>
