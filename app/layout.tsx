@@ -3,7 +3,7 @@ import { Cabin } from 'next/font/google'
 
 import { ModalProvider, SupabaseProvider, ToasterProvider, UserProvider } from '@/providers'
 import { getSongsByUserId } from '@/actions'
-import { Sidebar } from '@/components'
+import { Player, Sidebar } from '@/components'
 
 const font = Cabin({ subsets: ['latin'] })
 
@@ -32,6 +32,7 @@ export default async function RootLayout({
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
