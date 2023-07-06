@@ -1,7 +1,7 @@
 "use client"
 
 import { Song } from "@/types";
-import { MediaItem } from "@/components";
+import { LikeButton, MediaItem } from "@/components";
 
 interface SearchContentProps {
     songs: Song[];
@@ -33,6 +33,7 @@ const SearchContent: React.FC<SearchContentProps> = ({
                             data={song}
                         />
                     </div>
+                    <LikeButton songId={song.id} />
                 </div>
             ))}
         </div>

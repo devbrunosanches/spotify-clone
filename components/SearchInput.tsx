@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import qs from "query-string";
 
-import { BsSearch } from "react-icons/bs";
-
 import { useDebounce } from "@/hooks";
 
 import { Input } from "@/components";
@@ -20,7 +18,7 @@ const SearchInput = () => {
 
     useEffect(() => {
         const query = {
-            title: '',
+            title: debouncedValue,
         };
 
         const url = qs.stringifyUrl({
