@@ -2,7 +2,7 @@ import './globals.css'
 import { Cabin } from 'next/font/google'
 
 import { ModalProvider, SupabaseProvider, ToasterProvider, UserProvider } from '@/providers'
-import { getSongsByUserId } from '@/actions'
+import { getActiveProductsWithPrices, getSongsByUserId } from '@/actions'
 import { Player, Sidebar } from '@/components'
 
 const font = Cabin({ subsets: ['latin'] })
@@ -22,13 +22,15 @@ export default async function RootLayout({
 
   const userSongs = await getSongsByUserId();
 
+  const products = await getActiveProductsWithPrices();
+
   return (
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider />
+            <ModalProvider products={products} />
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>

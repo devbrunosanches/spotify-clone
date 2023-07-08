@@ -17,6 +17,7 @@ import LikeButton from "./LikeButton";
 import Player from "./Player";
 import PlayerContent from "./PlayerContent";
 import Slider from "./Slider";
+import SubscribeModal from "./SubscribeModal";
 
 export {
     Sidebar,
@@ -38,4 +39,5 @@ export {
     Player,
     PlayerContent,
     Slider,
+    SubscribeModal,
 }

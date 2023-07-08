@@ -17,7 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
             className={twMerge(`w-full rounded-full bg-blue-600
                 border border-transparent px-3 py-3 
                 disabled:cursor-not-allowed disabled:opacity-50 
-                text-black font-bold hover:scale-90 transition`,
+                text-black font-bold hover:scale-110 transition`,
                 disabled && 'opacity-75 cursor-not-allowed',
                 className
             )}

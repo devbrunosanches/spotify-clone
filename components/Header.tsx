@@ -10,7 +10,7 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 
-import { useAuthModal, useUser } from "@/hooks";
+import { useAuthModal, usePlayer, useUser } from "@/hooks";
 
 import { Button } from "@/components";
 
@@ -32,9 +32,12 @@ const Header: React.FC<HeaderProps> = ({
 
     const { user } = useUser();
 
+    const player = usePlayer();
+
     const handleLogout = async () => {
 
         const { error } = await supabaseClient.auth.signOut();
+        player.reset();
         router.refresh();
 
         if (error) {

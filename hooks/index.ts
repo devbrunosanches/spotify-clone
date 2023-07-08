@@ -7,6 +7,7 @@ import usePlayer from "./usePlayer";
 import useGetSongById from "./useGetSongById";
 import useLoadSongUrl from "./useLoadSongUrl";
 import useOnPlay from "./useOnPlay";
+import useSubscribeModal from "./useSubscribeModal";
 
 export {
     useUser,
@@ -18,4 +19,5 @@ export {
     useGetSongById,
     useLoadSongUrl,
     useOnPlay,
+    useSubscribeModal,
 }

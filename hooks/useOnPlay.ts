@@ -1,5 +1,5 @@
 import { Song } from "@/types";
-import { usePlayer, useAuthModal, useUser } from "@/hooks";
+import { usePlayer, useAuthModal, useUser, useSubscribeModal } from "@/hooks";
 
 const useOnPlay = (songs: Song[]) => {
 
@@ -9,9 +9,16 @@ const useOnPlay = (songs: Song[]) => {
 
     const { subscription, user } = useUser();
 
+    const subscribeModal = useSubscribeModal();
+
     const onPlay = (id: string) => {
+
         if (!user) {
             return authModal.onOpen();
+        }
+
+        if (!subscription) {
+            return subscribeModal.onOpen();
         }
 
         player.setId(id);
